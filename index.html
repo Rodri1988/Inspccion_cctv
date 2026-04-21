@@ -17,7 +17,7 @@
     <div class="max-w-4xl mx-auto bg-white p-6 rounded shadow-lg border border-gray-300">
         <div class="flex justify-between items-start border-b-2 border-black pb-4 mb-6">
             <h1 class="text-lg font-bold uppercase w-2/3">REGISTRO DE INSPECCIÓN SEMANAL AL SISTEMA DE SEGURIDAD POR CÁMARAS (CCTV)</h1>
-            <div class="text-right italic font-black text-blue-900 uppercase">Access</div>
+            <div class="text-right italic font-black text-blue-900">ACCESS</div>
         </div>
         
         <form id="auditForm" class="space-y-4">
@@ -45,44 +45,44 @@
                             <th class="border border-black p-2">COMENTARIOS</th>
                         </tr>
                     </thead>
-                    <tbody id="tableBody">
+                    <tbody>
                         <tr>
-                            <td class="border border-black p-2 font-bold">CÁMARAS</td>
-                            <td class="border border-black p-2 italic font-serif">Inspeccione visualmente para verificar el funcionamiento...</td>
+                            <td class="border border-black p-2 font-bold bg-gray-50 text-center uppercase">Cámaras</td>
+                            <td class="border border-black p-2 italic text-gray-700">Inspeccione visualmente para verificar el funcionamiento. Revise que el campo de visión sea correcto para que todas las personas y actividades sean visibles. Limpie las lentes.</td>
                             <td class="border border-black p-2 text-center text-xl">
-                                <select id="item1_st" class="w-full bg-white text-center"><option value="✔️">✔️</option><option value="✖️">✖️</option></select>
+                                <select id="item1_st" class="w-full bg-white text-center cursor-pointer font-bold"><option value="✔️">✔️</option><option value="✖️">✖️</option></select>
                             </td>
                             <td class="border border-black p-1"><input type="text" id="item1_ob" class="w-full outline-none"></td>
                         </tr>
                         <tr>
-                            <td class="border border-black p-2 font-bold">MONITORES</td>
-                            <td class="border border-black p-2 italic font-serif">Verifique visualmente el monitor para comprobar...</td>
+                            <td class="border border-black p-2 font-bold bg-gray-50 text-center uppercase">Monitores</td>
+                            <td class="border border-black p-2 italic text-gray-700">Verifique visualmente el monitor para comprobar el funcionamiento de la cámara y la claridad de la imagen.</td>
                             <td class="border border-black p-2 text-center text-xl">
-                                <select id="item2_st" class="w-full bg-white text-center"><option value="✔️">✔️</option><option value="✖️">✖️</option></select>
+                                <select id="item2_st" class="w-full bg-white text-center cursor-pointer font-bold"><option value="✔️">✔️</option><option value="✖️">✖️</option></select>
                             </td>
                             <td class="border border-black p-1"><input type="text" id="item2_ob" class="w-full outline-none"></td>
                         </tr>
                         <tr>
-                            <td class="border border-black p-2 font-bold">GRABADOR</td>
-                            <td class="border border-black p-2 italic font-serif">Verifique visualmente el funcionamiento del grabador...</td>
+                            <td class="border border-black p-2 font-bold bg-gray-50 text-center uppercase">Grabador</td>
+                            <td class="border border-black p-2 italic text-gray-700">Verifique visualmente el funcionamiento del grabador VHS/DV/NV. No debe haber un retraso reconocible entre cada fotograma/toma en cada sistema de cámaras.</td>
                             <td class="border border-black p-2 text-center text-xl">
-                                <select id="item3_st" class="w-full bg-white text-center"><option value="✔️">✔️</option><option value="✖️">✖️</option></select>
+                                <select id="item3_st" class="w-full bg-white text-center cursor-pointer font-bold"><option value="✔️">✔️</option><option value="✖️">✖️</option></select>
                             </td>
                             <td class="border border-black p-1"><input type="text" id="item3_ob" class="w-full outline-none"></td>
                         </tr>
                         <tr>
-                            <td class="border border-black p-2 font-bold">GRABACIONES</td>
-                            <td class="border border-black p-2 italic font-serif">Revise las grabaciones de los últimos siete días...</td>
+                            <td class="border border-black p-2 font-bold bg-gray-50 text-center uppercase whitespace-normal">Grabaciones</td>
+                            <td class="border border-black p-2 italic text-gray-700">Revise las grabaciones de los últimos siete días para verificar el estándar de reproducción. Confirme que la biblioteca contiene los últimos 90 días de grabaciones y realice verificaciones aleatorias en varias fechas.</td>
                             <td class="border border-black p-2 text-center text-xl">
-                                <select id="item4_st" class="w-full bg-white text-center"><option value="✔️">✔️</option><option value="✖️">✖️</option></select>
+                                <select id="item4_st" class="w-full bg-white text-center cursor-pointer font-bold"><option value="✔️">✔️</option><option value="✖️">✖️</option></select>
                             </td>
                             <td class="border border-black p-1"><input type="text" id="item4_ob" class="w-full outline-none"></td>
                         </tr>
                         <tr>
-                            <td class="border border-black p-2 font-bold">ALMACENAMIENTO</td>
-                            <td class="border border-black p-2 italic font-serif">Verifique que la capacidad no se exceda...</td>
+                            <td class="border border-black p-2 font-bold bg-gray-50 text-center uppercase whitespace-normal">Almacenamiento DVR</td>
+                            <td class="border border-black p-2 italic text-gray-700">Verifique que la capacidad de almacenamiento no se exceda antes de alcanzar los 90 días de capacidad.</td>
                             <td class="border border-black p-2 text-center text-xl">
-                                <select id="item5_st" class="w-full bg-white text-center"><option value="✔️">✔️</option><option value="✖️">✖️</option></select>
+                                <select id="item5_st" class="w-full bg-white text-center cursor-pointer font-bold"><option value="✔️">✔️</option><option value="✖️">✖️</option></select>
                             </td>
                             <td class="border border-black p-1"><input type="text" id="item5_ob" class="w-full outline-none"></td>
                         </tr>
@@ -90,24 +90,22 @@
                 </table>
             </div>
 
-            <div class="mt-6 border-2 border-black p-4 w-full md:w-80 bg-gray-50">
-                <label class="block text-xs font-bold mb-2 uppercase">Firma Electrónica Autorizada:</label>
+            <div class="mt-6 p-4 w-full md:w-80 border-2 border-black bg-gray-50">
+                <label class="block text-xs font-bold mb-2 uppercase">Firma del Inspector:</label>
                 <div id="signature-display" class="font-signature text-3xl text-blue-900 border-b border-gray-400 pb-2 mb-1">
                     Mauricio Santibañez
                 </div>
-                <p class="text-[9px] text-gray-500 uppercase font-bold">Documento firmado electrónicamente</p>
+                <p class="text-[9px] text-gray-500 font-bold italic uppercase">Firmado electrónicamente por el responsable</p>
             </div>
 
-            <button type="button" onclick="generatePDF()" class="w-full bg-black text-white font-bold py-4 rounded hover:bg-gray-900 transition tracking-widest uppercase">Generar Reporte PDF</button>
+            <button type="button" onclick="generatePDF()" class="w-full bg-black text-white font-bold py-4 rounded hover:bg-gray-900 transition tracking-widest uppercase shadow-lg">Descargar Registro Firmado</button>
         </form>
     </div>
 
     <script>
         document.getElementById('fecha').valueAsDate = new Date();
-
         function updateSignatureDisplay() {
-            const inspector = document.getElementById('inspector').value;
-            document.getElementById('signature-display').innerText = inspector;
+            document.getElementById('signature-display').innerText = document.getElementById('inspector').value;
         }
 
         async function generatePDF() {
@@ -118,13 +116,13 @@
 
             const getStatusText = (id) => document.getElementById(id).value.includes('✔️') ? 'OK' : 'X';
 
-            // Encabezado PDF
+            // Titulo PDF
             doc.setFont("helvetica", "bold");
             doc.setFontSize(11);
             doc.text("REGISTRO DE INSPECCIÓN SEMANAL AL SISTEMA DE SEGURIDAD POR CÁMARAS (CCTV)", 105, 20, { align: 'center', maxWidth: 180 });
             
             doc.setFontSize(10);
-            doc.text(`Responsable: ${inspector}`, 15, 35);
+            doc.text(`Inspección realizada por: ${inspector}`, 15, 35);
             doc.text(`Fecha: ${fecha}`, 150, 35);
 
             doc.autoTable({
@@ -132,46 +130,39 @@
                 theme: 'grid',
                 head: [['ITEM', 'DESCRIPCIÓN', 'ESTADO', 'COMENTARIOS']],
                 body: [
-                    ['CÁMARAS', 'Inspeccione visualmente para verificar el funcionamiento...', getStatusText('item1_st'), document.getElementById('item1_ob').value],
-                    ['MONITORES', 'Verifique visualmente el monitor para comprobar...', getStatusText('item2_st'), document.getElementById('item2_ob').value],
-                    ['GRABADOR', 'Verifique visualmente el funcionamiento del grabador...', getStatusText('item3_st'), document.getElementById('item3_ob').value],
-                    ['GRABACIONES', 'Revise las grabaciones de los últimos siete días...', getStatusText('item4_st'), document.getElementById('item4_ob').value],
-                    ['ALMACENAMIENTO', 'Verifique que la capacidad de almacenamiento...', getStatusText('item5_st'), document.getElementById('item5_ob').value]
+                    ['CÁMARAS', 'Inspeccione visualmente para verificar el funcionamiento. Revise que el campo de visión sea correcto para que todas las personas y actividades sean visibles. Limpie las lentes.', getStatusText('item1_st'), document.getElementById('item1_ob').value],
+                    ['MONITORES', 'Verifique visualmente el monitor para comprobar el funcionamiento de la cámara y la claridad de la imagen.', getStatusText('item2_st'), document.getElementById('item2_ob').value],
+                    ['GRABADOR', 'Verifique visualmente el funcionamiento del grabador VHS/DV/NV. No debe haber un retraso reconocible entre cada fotograma/toma en cada sistema de cámaras.', getStatusText('item3_st'), document.getElementById('item3_ob').value],
+                    ['GRABACIONES', 'Revise las grabaciones de los últimos siete días para verificar el estándar de reproducción. Confirme que la biblioteca contiene los últimos 90 días de grabaciones y realice verificaciones aleatorias en varias fechas.', getStatusText('item4_st'), document.getElementById('item4_ob').value],
+                    ['ALMACENAMIENTO DVR', 'Verifique que la capacidad de almacenamiento no se exceda antes de alcanzar los 90 días de capacidad.', getStatusText('item5_st'), document.getElementById('item5_ob').value]
                 ],
                 headStyles: { fillColor: [0, 0, 0], textColor: 255 },
                 styles: { fontSize: 8, font: "helvetica" },
-                columnStyles: { 2: { halign: 'center', fontStyle: 'bold' } },
+                columnStyles: { 0: { fontStyle: 'bold', halign: 'center' }, 2: { halign: 'center', fontStyle: 'bold' } },
                 didDrawCell: function(data) {
                     if (data.column.index === 2 && data.cell.section === 'body') {
-                        const cellText = data.cell.text[0];
-                        if (cellText === 'OK') doc.setTextColor(0, 128, 0);
-                        else if (cellText === 'X') doc.setTextColor(255, 0, 0);
+                        const val = data.cell.text[0];
+                        if (val === 'OK') doc.setTextColor(0, 128, 0);
+                        else if (val === 'X') doc.setTextColor(255, 0, 0);
                     }
                 }
             });
 
-            // Pie de página con Firma Tipográfica
-            const finalY = doc.lastAutoTable.finalY + 20;
-            
-            // Dibujamos una línea elegante
+            const finalY = doc.lastAutoTable.finalY + 15;
             doc.setDrawColor(0);
-            doc.setLineWidth(0.5);
-            doc.line(15, finalY + 10, 85, finalY + 10);
+            doc.line(15, finalY + 10, 80, finalY + 10);
             
-            // Estilo de la firma en el PDF (Usamos Italic para simular la fuente manuscrita)
             doc.setFont("times", "italic");
             doc.setFontSize(16);
-            doc.setTextColor(30, 58, 138); // Azul oscuro
+            doc.setTextColor(30, 58, 138);
             doc.text(inspector, 15, finalY + 8);
             
-            // Texto aclaratorio
             doc.setFont("helvetica", "normal");
             doc.setFontSize(8);
             doc.setTextColor(100);
-            doc.text("Firmado electrónicamente por el responsable", 15, finalY + 14);
-            doc.text(`ID de validación: ${Math.random().toString(36).substr(2, 9).toUpperCase()}`, 15, finalY + 18);
+            doc.text("Firmado electrónicamente por el responsable", 15, finalY + 15);
 
-            doc.save(`REPORTE_CCTV_${fecha}.pdf`);
+            doc.save(`INSPECCION_CCTV_${fecha}.pdf`);
         }
     </script>
 </body>
