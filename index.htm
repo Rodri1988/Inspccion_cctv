@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspección Seguridad CCTV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+</head>
+<body class="bg-gray-100 p-4">
+
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold text-center mb-6 text-blue-800">REGISTRO DE INSPECCIÓN SEMANAL CCTV</h1>
+        
+        <form id="auditForm">
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div>
+                    <label class="block text-sm font-bold">Inspector:</label>
+                    <input type="text" id="inspector" class="w-full border p-2 rounded" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold">Fecha:</label>
+                    <input type="date" id="fecha" class="w-full border p-2 rounded" required>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="border-b pb-4">
+                    <p class="font-bold text-blue-700">1. Cámaras</p>
+                    <p class="text-xs text-gray-600 mb-2 italic">Inspeccione visualmente para verificar el funcionamiento. Revise que el campo de visión sea correcto para que todas las personas y actividades sean visibles. Limpie las lentes.</p>
+                    <div class="flex items-center gap-4">
+                        <select id="cam_check" class="border p-2 rounded bg-gray-50"><option>✔</option><option>X</option></select>
+                        <input type="text" id="cam_obs" placeholder="Comentarios..." class="flex-1 border p-2 rounded text-sm">
+                    </div>
+                </div>
+
+                <div class="border-b pb-4">
+                    <p class="font-bold text-blue-700">2. Monitores</p>
+                    <p class="text-xs text-gray-600 mb-2 italic">Verifique visualmente el monitor para comprobar el funcionamiento de la cámara y la claridad de la imagen.</p>
+                    <div class="flex items-center gap-4">
+                        <select id="mon_check" class="border p-2 rounded bg-gray-50"><option>✔</option><option>X</option></select>
+                        <input type="text" id="mon_obs" placeholder="Comentarios..." class="flex-1 border p-2 rounded text-sm">
+                    </div>
+                </div>
+                
+                </div>
+
+            <div class="mt-6">
+                <label class="block text-sm font-bold mb-2 text-center">Firma del Inspector:</label>
+                <canvas id="signature-pad" class="border-2 border-dashed border-gray-300 w-full h-40 bg-gray-50 rounded"></canvas>
+                <button type="button" id="clear" class="mt-2 text-xs text-red-600 underline">Limpiar firma</button>
+            </div>
+
+            <button type="button" onclick="generatePDF()" class="w-full mt-8 bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700">
+                GENERAR PDF Y ENVIAR
+            </button>
+        </form>
+    </div>
+
+    <script>
+        // Lógica de la firma
+        const canvas = document.getElementById('signature-pad');
+        const signaturePad = new SignaturePad(canvas);
+
+        document.getElementById('clear').addEventListener('click', () => signaturePad.clear());
+
+        // Función para generar PDF
+        async function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            const inspector = document.getElementById('inspector').value;
+            const fecha = document.getElementById('fecha').value;
+
+            doc.setFontSize(16);
+            doc.text("REGISTRO DE INSPECCIÓN SEMANAL CCTV", 20, 20);
+            
+            doc.setFontSize(10);
+            doc.text(`Inspector: ${inspector}`, 20, 30);
+            doc.text(`Fecha: ${fecha}`, 20, 35);
+
+            // Tabla de resultados
+            doc.autoTable({
+                startY: 45,
+                head: [['ITEM', 'ESTADO', 'COMENTARIOS']],
+                body: [
+                    ['Cámaras', document.getElementById('cam_check').value, document.getElementById('cam_obs').value],
+                    ['Monitores', document.getElementById('mon_check').value, document.getElementById('mon_obs').value],
+                ],
+            });
+
+            // Agregar Firma
+            if (!signaturePad.isEmpty()) {
+                const imgData = signaturePad.toDataURL();
+                doc.text("Firma:", 20, doc.lastAutoTable.finalY + 20);
+                doc.addImage(imgData, 'PNG', 20, doc.lastAutoTable.finalY + 25, 50, 20);
+            }
+
+            doc.save(`Inspeccion_${fecha}.pdf`);
+        }
+    </script>
+</body>
+</html>
